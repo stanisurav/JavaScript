@@ -11,8 +11,15 @@
   <p id="text"></p>
 
   <script>
+          window.addEventListener("load", message_);
+
+          function message_() {
               alert("О, привет!");
-              document.write("О, привет!");
+              message_2();
+          }
+          function message_2() {
+              document.getElementById("text").innerHTML="О, привет!";
+          }
       </script>
 
   <p>Произвольный текст #2</p>
