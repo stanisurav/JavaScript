@@ -9,13 +9,31 @@
       <h1>Пример простой</h1>
       <script type="text/JavaScript">
 
-        function line()
-        {
-        document.writeln("<hr align='center' width='100'>");
-        }
-        for (var i=1; i<10; i++)
-        line();
+          function line()
+          {
+          document.writeln("<hr align='center' width='100'>");
+          }
+          for (var i=1; i<10; i++)
+          line();
+
       </script>
 
+
+      <h1>Пример "сложный"</h1>
+      <script type="text/javascript">
+
+          function line(q){
+
+              document.writeln("<hr align='center' width='"+q+"'>");
+          }
+
+          var k=10;
+          for (var i=1; i<10; i++){
+
+              line(k);
+              k=k+10;
+          }
+
+      </script>
   </body>
 </html>
