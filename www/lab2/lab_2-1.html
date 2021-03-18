@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Задание №1. Короленко</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+
+      <button type="button" name="button" class="button">Поменять цвет</button>
+      <div class="fon">
+      </div>
+      <script type="text/javascript">
+      $(document).ready(function(){
+
+        function randomColor() {
+            return '#' + Math.random().toString(16).slice(2, 8);
+        };
+
+          $(".button").click(function(){
+
+              $('body').css('background', randomColor());
+
+          });
+      });
+      </script>
+  </body>
+</html>
