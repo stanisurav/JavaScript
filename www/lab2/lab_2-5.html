@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Заданиие №5. Короленко</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/sunny/jquery-ui.css">
+
+    <script type="text/javascript">
+$(function() {
+
+	$('#img').draggable();
+  /*клавиша мыши нажата, курсор находится в границах элемента*/
+   $('#img').mousedown(function () {
+     $("html").mousemove(function (pos) {
+         $("#p1").css({'display':'block'}).text('Абсолютные координаты: По оси X:'+pos.pageX+', По оси Y:'+pos.pageY);
+     });
+    $('.p2').css({ 'display': 'block' }).text('О боже, он двигает картинку');
+   });
+
+   /*клавиша мыши отпущена, курсор находится в границах элемента*/
+   $('#img').mouseup(function () {
+
+     $('.p2').css({ 'display': 'none' }).text('');
+   });
+
+
+});
+    </script>
+</head>
+<body>
+    <img src="1.jpg" style="position: relative;" alt="Рикардо Милос" width="300" height="200" id="img">
+    <p id="p1"></p>
+    <p class="p2"></p>
+
+ </script>
+</body>
+</html>
