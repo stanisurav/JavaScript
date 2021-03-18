@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Задание №2. Короленко</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script language="JavaScript">
+
+        function  doReset(){
+
+            alert("Пока, пока!");
+        }
+
+        function doSend(){
+
+            var v=document.user.email.value.indexOf("@",1);
+
+            if(document.user.name.value==""){
+
+                alert('Вы должны заполнить поле Имя');
+                document.user.name.focus();
+                $("#name").css("outline","2px solid red");
+                return false;
+            }else{
+
+                $("#name").css("outline","2px solid white");
+            }
+
+            if(document.user.password.value==""){
+
+                alert('Вы должны заполнить поле с паролем');
+                document.user.password.focus();
+                $("#password").css("outline","2px solid red" );
+                return false;
+            }else{
+
+                $("#password").css("outline","2px solid white");
+            }
+
+            if(document.user.password.value.length<4){
+
+                alert('Пароль должен иметь не менее 4 символов');
+                document.user.password.focus();
+                $("#password").css("outline","2px solid red" );
+                return false;
+            }else{
+
+                $("#password").css("outline","2px solid white");
+            }
+
+            if(document.user.password_2.value==""){
+
+                alert('Вы должны заполнить поле с паролем');
+                document.user.password_2.focus();
+                $("#password_2").css("outline","2px solid red" );
+                return false;
+            }else{
+
+                $("#password_2").css("outline","2px solid white");
+            }
+
+            if(document.user.password.value!=document.user.password_2.value){
+
+                alert('Пароль не совпадают');
+                document.user.password_2.focus();
+                $("#password").css("outline","2px solid red" );
+                $("#password_2").css("outline","2px solid red" );
+                return false;
+            }else{
+
+                $("#password").css("outline","2px solid white");
+                $("#password_2").css("outline","2px solid white");
+            }
+
+            if(document.user.email.value==""){
+
+                alert('Вы должны заполнить поле e-mail');
+                document.user.email.focus();
+                $("#email").css("outline","2px solid red" );
+                return false;
+            }else{
+
+                $("#email").css("outline","2px solid white");
+            }
+
+            if(v==-1){
+
+                alert('Адрес e-mail указан неверно');
+                document.user.email.select();
+                document.user.email.focus();
+                $("#email").css("outline","2px solid red" );
+                return false;
+
+            }else{
+
+                $("#email").css("outline","2px solid white");
+            }
+
+            if(document.user.message.value==""){
+
+                alert("Вы должны заполнить поле сообщения")
+                document.user.message.focus();
+                $("#message").css("outline","2px solid red" );
+                return true;
+
+            }else{
+
+                $("#message").css("outline","2px solid white");
+            }
+
+            if(document.user.message.value.length<10){
+
+                alert("Сообщение должно иметь не менее 10 символов")
+                document.user.message.focus();
+                $("#message").css("outline","2px solid red" );
+                return true;
+
+            }else{
+                $("#message").css("outline","2px solid white");
+                alert("Ваши данные успешно отправлены")
+                document.user.submit();
+                return true;
+            }
+        }
+
+    </script>
+  </head>
+  <body>
+
+    <p align="center"><font size=6>Данные о пользователе</font>
+    <form name="user" class="form">
+        <b>Пожалуйста, укажите данные о себе:</b>
+    <br><br>
+        <label for="name">Имя</label>
+        <input type="text" id="name" size="30">
+    <br><br>
+        <label for="password">Пароль</label>
+        <input type="password" id="password" size="30">
+    <br><br>
+        <label for="password_2">Подтверждение пароля</label>
+        <input type="password" id="password_2" size="30">
+    <br><br>
+        <label for="password_2">Email</label>
+        <input type="email" id="email" size="30">
+    <br><br>
+        <label for="number_mobile">Телефон</label>
+        <input type="text" id="number_mobile" size="30">
+    <br><br>
+        <label for="message">Сообщение</label>
+        <textarea type="text" id="message" size="30"></textarea>
+    <br><br>
+        <input type="button" value="Послать" onClick="doSend()">
+        <input type="reset" value="Отменить" onClick="doReset()">
+    </form>
+  </body>
+</html>
